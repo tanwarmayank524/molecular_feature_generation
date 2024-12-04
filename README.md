@@ -1,5 +1,5 @@
 # molecular_feature_generation
-Collection of codes to analyze periodic ab initio molecular dynamics (AIMD) simulations. The scripts are currently tailored to the output generated from the Vienna Ab initio Simulation Package (VASP), but the input files can also be formatted for other software. These generalized codes work for simulation boxes in the cartesian geometry where the lattice vectors are orthogonal. These codes are being continuously developed, and more features will be added soon.
+A collection of codes to generate novel steric features for homogeneous catalysis, acting as descriptors for both activity and selectivity. These molecular features were initially developed for hydrogen atom transfer reactions, and extensions to homogeneous reactions are currently underway. 
 
 
 ## input file
