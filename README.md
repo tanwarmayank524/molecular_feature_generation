@@ -1,18 +1,9 @@
 # molecular_feature_generation
-A collection of codes to generate novel steric features for homogeneous catalysis, acting as descriptors for both activity and selectivity. These molecular features were initially developed for hydrogen atom transfer reactions, and extensions to homogeneous reactions are currently underway. 
+A collection of codes to generate novel steric features for homogeneous catalysis, acting as descriptors for both activity and selectivity. These molecular features were initially developed for hydrogen atom transfer reactions, and extensions to other homogeneous reactions are currently underway. 
 
 
 ## input file
 The input file(s) contain atomic coordinates for the corresponding atoms in a molecule/ molecule group.
-
-
-## bond length
-bond_length.py tracks the bond distance between two atoms during a periodic ab initio molecular dynamics simulation. The script can be run with:
-
-```python bond_length.py *XDATCAR.xlsx atom1 atom2 OUTPUT.png```
-
-Here, atom1 and atom2 are the indexes of the atom whose bond is being monitored, and OUTPUT.png gives the evolution of the bond length for simulation. *XDATCAR.xlsx is the input file. 
-
 
 # Authors
 Mayank Tanwar
@@ -23,7 +14,7 @@ Advisor: Prof. Matthew Neurock
 email: mneurock@umn.edu
 
 # Citation
-Publications relevant to the code:
+Publications relevant to the code: https://doi.org/10.26434/chemrxiv-2024-l2jgc
 # Acknowledgements
 NSF Center for Synthetic Organic Electrochemistry (https://cci.utah.edu/)
 
