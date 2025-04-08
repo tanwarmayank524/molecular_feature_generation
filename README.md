@@ -10,9 +10,6 @@ Mayank Tanwar
 email: tanwa008@umn.edu
 GitHub: tanwarmayank524
 
-Advisor: Prof. Matthew Neurock
-email: mneurock@umn.edu
-
 # Citation
 Publications relevant to the code: https://doi.org/10.26434/chemrxiv-2024-l2jgc
 # Acknowledgements
