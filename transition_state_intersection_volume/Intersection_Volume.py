@@ -5,13 +5,19 @@ import sys
 #read input file and create lists of atoms and their cartesian coordinates
 input_file = sys.argv[1]
 dataset = pd.read_excel(input_file)
+dataset = dataset.fillna(0)
+
+#substrate 1
 Atom1 = (dataset.iloc[:,[0]]).values.tolist()
 X1 = (dataset.iloc[:,[1]]).values.tolist()
 Y1 = (dataset.iloc[:,[2]]).values.tolist()
 Z1 = (dataset.iloc[:,[3]]).values.tolist()
 
-#reference atom index (rai)
-rai = (int(sys.argv[2]) -1)
+#substrate 2
+Atom2 = (dataset.iloc[:,[4]]).values.tolist()
+X2 = (dataset.iloc[:,[5]]).values.tolist()
+Y2 = (dataset.iloc[:,[6]]).values.tolist()
+Z2 = (dataset.iloc[:,[7]]).values.tolist()
 
 #element dictionary containing vanderwaal radius
 element_dict = {
@@ -29,7 +35,7 @@ element_dict = {
 #define scaling factors
 scaling = [1.0, 1.1, 1.2, 1.3, 1.4, 1.5]
 #initialize 
-distance = [0 for i in range(len(Atom1))]
+distance = [[0 for j in range(len(Atom2))] for i in range(len(Atom1))]
 volume_scaling = [[0 for f in range(len(scaling))] for i in range(len(Atom1))]#this gives intersection volume wrt each atom for every scaling factor
 intersection_volume = [[0 for f in range(len(scaling))] for i in range(1)]#this gives total intersection volume for all atoms for every scaling factor
 pi = math.pi
@@ -39,14 +45,18 @@ for f in range(len(scaling)):
     for i in range(len(Atom1)):
         V = 0.
         atom1 = Atom1[i][0]
+        if atom1 == 0:
+            continue
         r1 = element_dict.get(atom1)
         r1 = r1*scaling[f]
-        for j in range(1):
-            atom2 = Atom1[rai][0]
+        for j in range(len(Atom2)):
+            atom2 = Atom2[j][0]
+            if atom2 == 0:
+                continue
             r2 = element_dict.get(atom2)
             r2 = r2*scaling[f]
-            dist = math.dist((X1[i][0], Y1[i][0], Z1[i][0]), (X1[rai][0], Y1[rai][0], Z1[rai][0]))
-            distance[i] = dist
+            dist = math.dist((X1[i][0], Y1[i][0], Z1[i][0]), (X2[j][0], Y2[j][0], Z2[j][0]))
+            distance[i][j] = dist
             if r1 + r2 <= dist:
                 V = V
             elif dist == 0:
