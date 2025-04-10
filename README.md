@@ -6,7 +6,7 @@ These molecular features are initially developed for hydrogen atom abstraction r
 
 
 ## solid angle
-Solid angle is quantified by the angle formed at any vertex atom by any three atoms. The script can be run with:
+Solid angle is quantified by the angle formed at any vertex atom by any three atoms and serves as a descriptor for how reactive a molecule is. The lower the solid angle, more reactive the molecule. The script can be run with:
 
 ```python solid_angle.py *.xlsx atom1 atom2 atom3 atom4```
 
