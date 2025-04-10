@@ -3,12 +3,14 @@ A collection of codes to generate novel steric features for homogeneous catalysi
 These molecular features are initially developed for hydrogen atom abstraction reactions, but can be further extended to other solution-phase reactions. 
 
 
+
+
 ## solid angle
 Solid angle is quantified by the angle formed at any vertex atom by any three atoms. The script can be run with:
 
 ```python solid_angle.py *.xlsx atom1 atom2 atom3 atom4```
 
-Here, atom1 is the index of the designated vertex atom, and atom2-4 are the indexes of the three atoms forming this solid angle. *.xlsx is the input file containing corrdinates of the molecule.
+Here, atom1 is the index of the designated vertex atom, and atom2-4 are the indexes of the three atoms forming this solid angle. *.xlsx is the input file containing cartesian coordinates of the molecule.
 
 ![Alt text](https://github.com/tanwarmayank524/molecular_feature_generation/blob/main/solid_angle/solid_angle.png)
 
@@ -18,7 +20,7 @@ The higher the intersection volume at a particular atom, the higher the sterics.
 
 ```python intersection_volume.py *.xlsx atom1```
 
-Here, atom1 is the index of the atom whose sterics are being quantified. *.xlsx is the input file containing corrdinates of the molecule.
+Here, atom1 is the index of the atom whose sterics are being quantified. *.xlsx is the input file containing cartesian coordinates of the molecule.
 
 ![Alt text](https://github.com/tanwarmayank524/molecular_feature_generation/blob/main/ground_state_intersection_volume/Intersection_Volume.png)
 
@@ -27,7 +29,7 @@ This descriptor quantifies the transition state sterics between two molecules. T
 
 ```python intersection_volume.py *.xlsx```
 
-Here, *.xlsx is the input file containing corrdinates of both the molecules.
+Here, *.xlsx is the input file containing cartesian coordinates of both the molecules.
 
 ![Alt text](https://github.com/tanwarmayank524/molecular_feature_generation/blob/main/transition_state_intersection_volume/Intersection_Volume.png)
 
