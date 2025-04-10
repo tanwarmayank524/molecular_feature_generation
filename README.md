@@ -16,6 +16,7 @@ Here, atom1 is the index of the designated vertex atom, and atom2-4 are the inde
 
 ## ground state intersection volume
 This descriptor quantifies the sterics at any particular atom in a molecule due to the rest of the atoms by taking the pair-wise intersection between atoms and summing them up. Atoms here are assumed as soft van der Waals spheres and their radius corresponding to their van der Waals radii.
+We further scale the van der Waals radii using a scaling factor (f) from 1 to 1.5 in step sizes of 0.1, which assists in capturing the vicinal and distal sterics of different substituents.
 The higher the intersection volume at a particular atom, the higher the sterics. The script can be run with:
 
 ```python intersection_volume.py *.xlsx atom1```
